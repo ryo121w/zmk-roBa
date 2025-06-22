@@ -1,4 +1,5 @@
 #include "roBa.dtsi"
+#include <dt-bindings/input/input-event-codes.h> 
 
 &default_transform {
     col-offset = <6>;
@@ -62,4 +63,17 @@
     };
 };
 
+/ {   /* ← スラッシュで始まるルートノード内 */
+
+    scroll_ultrafine: scroll_ultrafine {
+        compatible = "zmk,input-processor-scaler";
+        #input-processor-cells = <2>;
+        type  = <INPUT_EV_REL>;
+        codes = <INPUT_REL_WHEEL INPUT_REL_HWHEEL>;
+        multiplier = <1>;
+        divisor    = <8>;          /* さらに細かくしたければ 16、粗くしたければ 4 */
+        device = <&trackball>;
+        track-remainders;          /* 端数を繰り越してカクつきを抑える */
+    };
+};
 
