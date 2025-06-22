@@ -1,5 +1,4 @@
 #include "roBa.dtsi"
-#include <dt-bindings/input/input-event-codes.h> 
 
 &default_transform {
     col-offset = <6>;
@@ -62,14 +61,3 @@
         scroll-layers = <5>;
     };
 };
-
-/ {
-    scroll_ultrafine: scroll_ultrafine {
-        compatible = "zmk,input-processor-scaler";
-        #input-processor-cells = <2>;   /* ← 2セル宣言 */
-
-        /* multiplier / divisor を削除 */
-        track-remainders;
-    };
-};
-

@@ -1,5 +1,4 @@
 #include "roBa.dtsi"
-#include <dt-bindings/input/input-event-codes.h> 
 
 &kscan0 {
         col-gpios
@@ -14,18 +13,4 @@
 
 &left_encoder {
     status = "okay";
-};
-
- / {                      /* ルートノード（& ではなく / ）*/
-    scroll_ultrafine: scroll_ultrafine {
-        compatible = "zmk,input-processor-scaler";
-        status = "disabled";         /* ← 実際には使わない */
-        #input-processor-cells = <2>;
-        type  = <INPUT_EV_REL>;
-        codes = <INPUT_REL_WHEEL INPUT_REL_HWHEEL>;
-        /* multiplier / divisor / track-remainders はそのままでも可 */
-        multiplier = <1>;
-        divisor    = <8>;
-        track-remainders;
-    };
 };

@@ -116,7 +116,6 @@
         };
 
         SCROLL {
-            input-processors = <&scroll_ultrafine 1 8>;
             bindings = <
 &trans  &trans  &trans  &trans  &trans                      &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
