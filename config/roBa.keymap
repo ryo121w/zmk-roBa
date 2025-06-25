@@ -6,10 +6,10 @@
 #define MOUSE 4
 #define SCROLL 5
 #define NUM 6
-#define ZMK_POINTING_DEFAULT_SCRL_VAL 10
+#define ZMK_POINTING_DEFAULT_SCRL_VAL 3
 
 &msc {
-  time-to-max-speed-ms = <800>;        // 最大速度に達するまでの時間（例:400ms）
+  time-to-max-speed-ms = <1200>;        // 最大速度に達するまでの時間（例:400ms）
   acceleration-exponent = <0>;        // 緩やかな加速
   delay-ms = <0>;                      // 押下後すぐ開始
 };
