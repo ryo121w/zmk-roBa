@@ -12,6 +12,7 @@
   time-to-max-speed-ms = <1000>;        // 最大速度に達するまでの時間（例:400ms）
   acceleration-exponent = <0>;        // 緩やかな加速
   delay-ms = <0>;                      // 押下後すぐ開始
+  input-processors = <&zip_scroll_scaler 1 2>;
 };
 
 &mt {
