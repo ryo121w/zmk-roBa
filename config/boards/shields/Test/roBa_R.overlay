@@ -1,5 +1,5 @@
 #include "roBa.dtsi"
-#include <dt-bindings/zmk/input-event-codes.h>
+#include "zmk/input-event-codes.h"
 
 
 &default_transform {
