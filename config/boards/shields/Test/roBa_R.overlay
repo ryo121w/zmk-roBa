@@ -23,20 +23,23 @@
     };
 };
 
-/input_processors {
-    zip_scroll_scaler: zip_scroll_scaler {
-        compatible = "zmk,input-processor-scaler";
-        #input-processor-cells = <2>;
-        type = <0x02>;            // INPUT_EV_REL
-        codes = <0x08>;           // INPUT_REL_WHEEL
-        track-remainders;
+/ {
+    input_processors {
+        zip_scroll_scaler: zip_scroll_scaler {
+            compatible = "zmk,input-processor-scaler";
+            #input-processor-cells = <2>;
+            type = <0x02>;            // INPUT_EV_REL
+            codes = <0x08>;           // INPUT_REL_WHEEL
+            track-remainders;
+        };
+    };
+
+    msc_input_listener {
+        compatible = "zmk,input-listener";
+        input-processors = <&zip_scroll_scaler 1 3>;
     };
 };
 
-msc_input_listener {
-    compatible = "zmk,input-listener";
-    input-processors = <&zip_scroll_scaler 1 3>;
-};
 
 
 
