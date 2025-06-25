@@ -36,7 +36,7 @@
 
     msc_input_listener {
         compatible = "zmk,input-listener";
-        input-processors = <&zip_scroll_scaler 1 10>;
+        input-processors = <&zip_scroll_scaler 1 20>;
     };
 };
 
