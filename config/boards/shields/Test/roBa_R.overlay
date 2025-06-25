@@ -1,3 +1,5 @@
+#include <input/processors.dtsi>
+#include <dt-bindings/input/event-codes.h>
 #include "roBa.dtsi"
 
 
@@ -19,26 +21,23 @@
     trackball_listener {
         compatible = "zmk,input-listener";
         device = <&trackball>;
-
     };
-};
 
-/ {
-  input_processors {
-    zip_scroll_scaler: zip_scroll_scaler {
-      compatible = "zmk,input-processor-scaler";
-      #input-processor-cells = <2>;
-      type = <INPUT_EV_REL>;
-      codes = <INPUT_REL_WHEEL>;
-      track-remainders;
+    input_processors {
+        zip_scroll_scaler: zip_scroll_scaler {
+            compatible = "zmk,input-processor-scaler";
+            #input-processor-cells = <2>;
+            type = <INPUT_EV_REL>;
+            codes = <INPUT_REL_WHEEL>;
+            track-remainders;
+        };
     };
-  };
 
-  msc_input_listener: msc_input_listener {
-    compatible = "zmk,input-listener";
-    device = <&trackball>;  
-    input-processors = <&zip_scroll_scaler 1 80>; // 1/80 に縮小
-  };
+    msc_input_listener {
+        compatible = "zmk,input-listener";
+        device = <&trackball>;
+        input-processors = <&zip_scroll_scaler 1 40>;
+    };
 };
 
 
