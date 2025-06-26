@@ -1,6 +1,5 @@
 #include "roBa.dtsi"
 
-
 &default_transform {
     col-offset = <6>;
 };
@@ -19,26 +18,9 @@
     trackball_listener {
         compatible = "zmk,input-listener";
         device = <&trackball>;
-    };
 
-    input_processors {
-        zip_scroll_scaler: zip_scroll_scaler {
-            compatible = "zmk,input-processor-scaler";
-            #input-processor-cells = <2>;
-            type = <0x02>;          
-            codes = <0x08>;         
-            track-remainders;
-        };
-    };
-
-    msc_input_listener {
-        compatible = "zmk,input-listener";
-        device = <&trackball>;
-        input-processors = <&zip_scroll_scaler 1 40>;
     };
 };
-
-
 
 &pinctrl {
     spi0_default: spi0_default {
@@ -79,3 +61,5 @@
         scroll-layers = <5>;
     };
 };
+
+
