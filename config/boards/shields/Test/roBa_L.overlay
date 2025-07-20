@@ -13,5 +13,4 @@
 
 &left_encoder {
     status = "okay";
-    debounce-ms = <10>;
 };
