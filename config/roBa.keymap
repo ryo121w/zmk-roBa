@@ -6,7 +6,7 @@
 #define MOUSE 4
 #define SCROLL 5
 #define NUM 6
-#define ZMK_POINTING_DEFAULT_SCRL_VAL 1
+#define ZMK_POINTING_DEFAULT_SCRL_VAL 100
 
 &msc {
   time-to-max-speed-ms = <1000>;        // 最大速度に達するまでの時間（例:400ms）
@@ -69,12 +69,12 @@
             flavor = "balanced";  // 必要であれば flavor 追加可能
         };
 
-        encoder_msc_down_up: encoder_msc_down_up {
+        scroll_up_down: behavior_sensor_rotate_mouse_wheel_up_down {
             compatible = "zmk,behavior-sensor-rotate";
-            label = "ENCODER_MSC_DOWN_UP";
             #sensor-binding-cells = <0>;
-            bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
-            tap-ms = <1>; // 反応速度（必要なら調整）
+            bindings = <&msc SCRL_UP>, <&msc SCRL_DOWN>;
+            // 追加: スクロールのタップ時間を設定 (20ms)
+            tap-ms = <20>;
         };
     };
 
@@ -90,7 +90,7 @@
 &kp LCTRL       &kp LEFT_WIN  &kp LEFT_ALT  &lt_to_layer_0 6 INT_HENKAN  &lt 2 SPACE  &lt_to_layer_0 3 INT_MUHENKAN      &kp BACKSPACE  &lt 1 ENTER                             &kp DEL
             >;
 
-            sensor-bindings =  <&encoder_msc_down_up>;
+            sensor-bindings =  <&scroll_up_down>;
         };
 
         FUNCTION {
