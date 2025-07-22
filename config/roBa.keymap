@@ -79,7 +79,7 @@
 
 
     keymap {
-        compatible = "zmk,keymap";b
+        compatible = "zmk,keymap";
 
         default_layer {
             bindings = <
